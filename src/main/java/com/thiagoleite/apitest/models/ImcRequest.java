@@ -1,22 +1,15 @@
 package com.thiagoleite.apitest.models;
 
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
 public class ImcRequest {
-    private double height;
-    private double weight;
 
-    public double getHeight() {
-        return height;
-    }
+    @NotBlank(message = "Campo height deve ser preenchido.")
+    private Integer height;
 
-    public void setHeight(double height) {
-        this.height = height;
-    }
+    @NotBlank(message = "Campo weight deve ser preenchido.")
+    private Double weight;
 
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
 }
